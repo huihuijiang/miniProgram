@@ -1,1 +1,2 @@
-# miniProgram下载下来代码就可以在开发工具上预览，申请一个小程序开发者就可以在手机行预览了
+###### 1.左滑删除
+![slide-cell](https://s27.aconvert.com/convert/p3r68-cdx67/sey2d-ybgl5.gif "左滑删除")

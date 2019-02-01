@@ -1,0 +1,9 @@
+/**index.wxss**/
+navigator {
+    height:100rpx;
+    line-height:100rpx;
+    border-bottom:1px solid #eee;
+    color:#666;
+    font-size:36rpx;
+    padding-left:30rpx;
+}

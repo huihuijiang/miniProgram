@@ -1,0 +1,13 @@
+/* component/drafting-block/draft-block.wxss */
+/* component/drafting/drafting.wxss */
+.drafting-box{
+    width:100px;
+    height:100px;
+    position:fixed;
+   
+}
+.drafting-box image{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+}

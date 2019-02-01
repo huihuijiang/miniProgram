@@ -1,0 +1,9 @@
+<!--component/currenc-cell/currency-cell.wxml-->
+<view class="container">
+    <slot></slot>
+   
+    <view class="right" id="{{item.id}}" bindtap='click'>{{title}}</view>
+ 
+ 
+</view>
+

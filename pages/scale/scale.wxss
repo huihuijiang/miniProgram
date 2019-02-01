@@ -1,0 +1,4 @@
+/* pages/scale/scale.wxss */
+image{
+position: absolute;
+}

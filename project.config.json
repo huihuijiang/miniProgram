@@ -1,0 +1,63 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.1",
+	"appid": "wx9f05ac1b2f2eb2f7",
+	"projectname": "wxApp1",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "logs",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "左滑删除",
+					"pathName": "pages/slideCell/slideCell",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拖拽",
+					"pathName": "pages/drafting/drafting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "缩放",
+					"pathName": "pages/scale/scale"
+				}
+			]
+		}
+	}
+}

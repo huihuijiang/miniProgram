@@ -1,0 +1,7 @@
+<!--pages/drafting/drafting.wxml-->
+<view class="container">
+<drafting 
+    class="drafting" 
+    vertical="true"
+></drafting>
+</view>

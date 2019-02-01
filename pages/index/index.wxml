@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <navigator url="../slideCell/slideCell" hover-class="navigator-hover">slideCell(左滑删除)</navigator>
+  <navigator url="../drafting/drafting" hover-class="navigator-hover">drafting(可拖拽悬浮)</navigator>
+ <!-- <navigator url="../scale/scale" hover-class="navigator-hover">scale(双指缩放)</navigator> -->
+</view>

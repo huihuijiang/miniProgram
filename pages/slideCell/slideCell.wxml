@@ -1,0 +1,18 @@
+<!--pages/slideCell/slideCell.wxml-->
+<view class="container">
+  <view class="userinfo">
+   <slide-cell list="{{list}}" title="删除" bindmyevent="onMyEvent"></slide-cell>
+   <!-- <currency-cell list="{{list}}" title="删除" bindmyevent="onMyEvent">
+        <view class="cell-list">
+            <image src="../../image/head.jpg"></image>
+            <view class="cont">
+                <view class="name">会会酱</view>
+                <view class="text">昨晚睡得好吗</view>
+            </view>
+        </view>
+        
+   </currency-cell> -->
+  </view>
+  
+ 
+</view>

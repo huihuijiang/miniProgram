@@ -35,5 +35,33 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+	/**
+	  * 设置监听器
+	  */
+	setWatcher(data, watch, that) { // 接收index.js传过来的data对象和watch对象和页面对象
+		Object.keys(watch).forEach(key => { // 将watch对象内的key遍历
+			console.log(key)
+			this.observe(data, key, watch[key], that); // 监听data内的v属性，传入watch内对应函数以调用
+		})
+	},
+
+    /**
+     * 监听属性 并执行监听函数
+     */
+	observe(obj, key, watchFun, that) {
+		var val = obj[key]; // 给该属性设默认值
+		Object.defineProperty(obj, key, {
+			configurable: true,
+			enumerable: true,
+			set: function (value) {
+				val = value;
+				console.log(val)
+				watchFun(val, that); // 赋值(set)时，调用对应函数
+			},
+			get: function () {
+				return val;
+			}
+		})
+	}
 })

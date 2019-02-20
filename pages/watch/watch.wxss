@@ -1,0 +1,4 @@
+/* pages/watch/watch.wxss */
+button{
+	margin:20px;
+}

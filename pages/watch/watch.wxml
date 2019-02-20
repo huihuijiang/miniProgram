@@ -1,0 +1,2 @@
+<!--pages/watch/watch.wxml-->
+<button bindtap='setValue'>点击体验监听，查看控制台输出数据</button>

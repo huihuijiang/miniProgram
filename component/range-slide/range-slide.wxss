@@ -1,0 +1,38 @@
+/* component/range-slide/range-slide.wxss */
+.box{
+	width:80%;
+	height:50px;
+	position: relative;
+	margin-left:40px;
+	
+}
+.range-line image{
+	width:20px;
+	height:20px;
+	position:absolute;
+	/* top:5px; */
+}
+.range-line .choosed-line{
+	/* width:100%; */
+	display:block;
+	height:3px;
+	background:green;
+	position:absolute;
+	top:0;
+}
+.range-line image:nth-of-type(1){
+	
+	bottom:0px;
+}
+.range-line image:nth-of-type(2){
+	
+	top:0px;
+}
+.box .range-line{
+	width:100%;
+	display:block;
+	height:3px;
+	background:#999;
+	position:absolute;
+	top:11px;
+}

@@ -9,9 +9,9 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         list: [
-            { text: '微信好友1111111111111111111', left: 0, id: 0 },
-            { text: '微信好友1', left: 0, id: 1 },
-            { text: '微信好友1', left: 0, id: 2 }
+            { text: '微信好友1', left: 0, id: 0 },
+            { text: '微信好友2', left: 0, id: 1 },
+            { text: '微信好友3', left: 0, id: 2 }
         ]
     },
     onMyEvent: function (e) {//右侧滑块的点击事件

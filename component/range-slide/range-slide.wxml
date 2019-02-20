@@ -1,0 +1,9 @@
+<!--component/range-slide/range-slide.wxml-->
+<view class="box" id="range-slider">
+    <view class="range-line">
+		<view class="choosed-line" style="width:{{left2 - left1}}px;left:{{left1+15/2}}px;"  ></view>
+		<image src="../../image/down.png" style="left:{{left1}}px;" catchtouchstart='start' catchtouchmove='move' catchtouchend='end' data-from="1"></image>
+		<image src="../../image/up.png" style="left:{{left2}}px;" catchtouchstart='start' catchtouchmove='move' catchtouchend='end' data-from="2"></image>
+	</view>
+    
+</view>

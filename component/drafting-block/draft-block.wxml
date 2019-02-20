@@ -1,4 +1,4 @@
 <!--component/drafting-block/draft-block.wxml-->
 <view id="box" class="drafting-box" style="left:{{left}}px;top:{{top}}px" catchtouchstart='start' catchtouchmove='move' catchtouchend='end'>
-    <image src="https://wx.qlogo.cn/mmopen/vi_32/gicGp5N9eRW4cZukYr5Q2v0X70UrhEE8PLBY7icpZDVLdGOmiclKqHDo1kCLAn6gYtsiaEXYmHVN8HFM70e5yXiaSnw/132"></image>
+    <image src="../../image/head.jpg"></image>
 </view>

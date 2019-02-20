@@ -11,9 +11,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.1.1",
+	"libVersion": "2.6.0",
 	"appid": "wx9f05ac1b2f2eb2f7",
-	"projectname": "wxApp1",
+	"projectname": "hui",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -55,7 +55,28 @@
 				{
 					"id": -1,
 					"name": "缩放",
-					"pathName": "pages/scale/scale"
+					"pathName": "pages/scale/scale",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "缩放",
+					"pathName": "pages/scale/scale",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "coin",
+					"pathName": "pages/drop/dropCoin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "滑块",
+					"pathName": "pages/rangeSlider/slider",
+					"scene": null
 				}
 			]
 		}

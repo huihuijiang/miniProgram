@@ -1,0 +1,8 @@
+<!--pages/drop/dropCoin.wxml-->
+<view class="bottom">
+	<input bindinput='input' value="{{value}}"></input>
+	<button bindtap='send'>发送</button>
+</view>
+<view class="coin" wx:for="{{coins}}" style="left:{{item.left}}px;top:{{item.top}}px;" wx:if="{{item.show}}" wx:key="{{index}}">
+<image src="../../image/jinbi.png"></image>
+</view>

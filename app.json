@@ -1,14 +1,17 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/slideCell/slideCell",
-        "pages/drafting/drafting",
-        "pages/scale/scale"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "white"
-    }
+	"pages": [
+		"pages/index/index",
+		"pages/slideCell/slideCell",
+		"pages/drafting/drafting",
+		"pages/scale/scale",
+		"pages/drop/dropCoin",
+		"pages/rangeSlider/slider",
+		"pages/watch/watch"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#000",
+		"navigationBarTitleText": "WeChat",
+		"navigationBarTextStyle": "white"
+	}
 }

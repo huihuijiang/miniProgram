@@ -3,4 +3,7 @@
   <navigator url="../slideCell/slideCell" hover-class="navigator-hover">slideCell(左滑删除)</navigator>
   <navigator url="../drafting/drafting" hover-class="navigator-hover">drafting(可拖拽悬浮)</navigator>
  <!-- <navigator url="../scale/scale" hover-class="navigator-hover">scale(双指缩放)</navigator> -->
+  <!-- <navigator url="../drop/dropCoin" hover-class="navigator-hover">dropCoin(掉落钱币)</navigator> -->
+  <navigator url="../watch/watch" hover-class="navigator-hover">watcher(监听器)</navigator>
 </view>
+

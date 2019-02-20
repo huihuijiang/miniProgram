@@ -3,7 +3,7 @@
   <view class="list" wx:for="{{list}}">
  
     <view class="left" id="{{item.id}}" style="{{item.style}}" bindtouchstart='start' bindtouchmove='move' bindtouchend='end'>
-        <image src="../../image/head.jpg"></image>
+        <image src="../../image/head.jpg" bind></image>
         <view>{{item.text}}</view>
     </view>
     <view class="right" id="{{item.id}}" bindtap='click'>{{title}}</view>

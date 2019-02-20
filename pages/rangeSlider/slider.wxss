@@ -1,0 +1,4 @@
+/* pages/rangeSlider/slider.wxss */
+page{
+	padding-top:30px;
+}

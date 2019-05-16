@@ -2,15 +2,20 @@
 Page({
 
 	data: {
-
+		
 	},
-	// 设置监听对象
+	// 设置监听对象名和回调
 	watch: {
 		value: function (newValue, that) {
 			console.log("---------------------------------" + newValue); // name改变时，调用该方法输出新值。
 			that.next();
 			
-		}
+		},
+		msg: function (newValue, that) {
+			console.log("---------------------------------" + newValue); // name改变时，调用该方法输出新值。
+			// that.next();
+
+		},
 	},
 	
 	onLoad: function (options) {
@@ -26,6 +31,8 @@ Page({
 	
 	setValue:function(){
 		getApp().globalData.value = 100;
+		getApp().globalData.msg = 'huihuijiang';
+
 	},
 	
 	

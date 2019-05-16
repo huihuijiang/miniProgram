@@ -17,29 +17,22 @@
 .usermotto {
   margin-top: 200px;
 }
-.cell-list{
-   padding:0 30rpx;
-    height:200rpx;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
+
+.my-list{
+	width:100%;
+	height:80rpx;
 }
-.cell-list image{
-    width:100rpx;
-    height:100rpx;
-    margin-right:30rpx;
+.my-list image{
+    width:80rpx;
+    height:80rpx;
+    float:left;
+
 }
-.cell-list .cont{
-    flex:1;
-    height:100rpx;
-    display:felx;
-    flex-direction: column;
-    justify-content:space-around;
-}
-.cell-list .cont .name{
-    font-size:30rpx;
-} 
-.cell-list .cont .text{
-    font-size:30rpx;
-    color:#666;
-}
+.my-list view{
+    
+    float:left;
+    height:80rpx;
+    line-height:80rpx;
+    font-size:16px;
+	margin-left:10px;
+}  

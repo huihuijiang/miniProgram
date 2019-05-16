@@ -8,8 +8,14 @@ Page({
   },
   
   
-  onLoad: function () {
-      
-  },
+	onLoad: function () {
+		console.log("index.onload")
+	},
+	onReady: function () {
+		console.log("index.onready")
+	},
+	onShow: function () {
+		console.log("index.onshow")
+	},
   
 })

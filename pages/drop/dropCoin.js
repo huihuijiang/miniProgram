@@ -1,7 +1,7 @@
 // pages/drop/dropCoin.js
 const 	sw = wx.getSystemInfoSync().windowWidth,
 		sh = wx.getSystemInfoSync().windowHeight;
-var speedX = 5;
+var speedX = 2;
 var speedY = 3;
 Page({
 
@@ -118,7 +118,7 @@ function startMove(value,index,that) {
 	//设置计时器
 	value.timer = setInterval(function () {
 		//竖直方向上反向运动时速度为负值，为了达到反弹逐渐速度逐渐减小的效果，可以在向下碰撞后速度加上一个正值
-		value.speedY += 20;
+		value.speedY += 6;
 		//分别获取div距离左边距和上边距的动态距离
 		var iW = value.left + value.speedX*2;
 		var iH = value.top + value.speedY;
@@ -133,8 +133,9 @@ function startMove(value,index,that) {
 			iW = w;
 		}
 		//当动态高度达到div最大运动高度范围时，立刻转向速度，同时将x方向速度乘以0.8，使之速度逐渐减小		
-		if (iH >= h || iH <= 0) { 
+		if (iH >= h || iH <= 0 || value.speedY==0) { 
 			value.speedY = -value.speedY; 
+			value.speedY = value.speedY > 0 ? value.speedY - 1 : value.speedY +1;
 			iH = h; 
 			value.speedX *= 0.95;
 		}

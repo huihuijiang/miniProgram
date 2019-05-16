@@ -34,7 +34,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+	value:'',
+	msg:'',
   },
 	/**
 	  * 设置监听器

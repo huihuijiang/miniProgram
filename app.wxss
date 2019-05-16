@@ -1,7 +1,8 @@
 /**app.wxss**/
 .container {
   height: 100%;
-  overflow:auto;
+  overflow-y:auto;
+  overflow-x: hidden;
 } 
 page{
      width:100%;

@@ -1,18 +1,22 @@
 //logs.js
 
 Component({
+	options: {
+		multipleSlots: true // 在组件定义时的选项中启用多slot支持
+	},
+
+
     /**
      * 组件的属性列表
      */
     properties: {
-        list: {
+        right: {
             type: Array,
-
+			observer(newVal, oldVal, changedPath) {
+				// console.log(newVal)
+			}
         },
-        title: {
-            type: String,
-
-        },
+       
 
     },
 
@@ -22,86 +26,84 @@ Component({
     data: {
         x0: 0,
         y0: 0,
+		left0:0,
 
     },
-
+	relations: {
+		'./custom-li': {
+			type: 'child', // 关联的目标节点应为子节点
+			linked(target) {
+				// 每次有custom-li被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
+			},
+			linkChanged(target) {
+				// 每次有custom-li被移动后执行，target是该节点实例对象，触发在该节点moved生命周期之后
+			},
+			unlinked(target) {
+				// 每次有custom-li被移除时执行，target是该节点实例对象，触发在该节点detached生命周期之后
+			}
+		}
+	},
     /**
      * 组件的方法列表
      */
     methods: {
-        
+		
+		tap:function(){
+			this.setData({
+				style: 'transform: translate(' + 0 + 'px, 0);transition:all 0.3s linear 0.01s',
+				left0: 0
+			})
+		},
         start(event) {
-            let arr = this.data.list;
-			console.log(event.currentTarget.id)
-            let left,style;           
-            for (var i in arr) {
-                if (i == event.currentTarget.id) {
-                    if (arr[i].left != undefined)arr[i].left0 = arr[i].left;
-                }else{
-                    left = 0;
-                    style = 'transform: translate(' + left + 'px, 0);transition:all 0.3s linear 0.01s'
-                    arr[i].left = left;
-                    arr[i].style = style;                   
-                }
-            }
-            this.setData({
-                list: arr,
-                x0: event.touches[0].clientX,
-                y0: event.touches[0].clientY,
-            })
+			var that= this;
+			this.initLeft()
+			this.setData({
+				x0 : event.touches[0].clientX,
+				y0 : event.touches[0].clientY,
+			})
+			
         },
         move(event) {
-            const [x1, y1, x0, y0] = [
-                event.changedTouches[0].clientX,
-                event.changedTouches[0].clientY,
-                this.data.x0,
-                this.data.y0
-            ];
-            let index,left;
-            var arr = this.data.list;
-            for (var i in arr) {
-                if (arr[i].id == event.currentTarget.id){
-                    index = i;
-                    left = arr[i].left0 + (x1 - x0);
-                }
-            }
-            if (Math.abs(x1 - x0) > Math.abs(y1 - y0)) { //zuoyou
-                if(arr[index].left0==0){
-                    if (x1 - x0>0) left=0;
-                }
-                var style = 'transform: translate(' + left + 'px, 0);'
-                arr[index].left = left;
-                arr[index].style = style;
+            let x1 = event.changedTouches[0].clientX,
+				y1 = event.changedTouches[0].clientY,
+				x0 = this.data.x0,
+				y0 = this.data.y0,
+				left = this.data.left0 + (x1 - x0),
+				left0 = this.data.left0;
+            if (Math.abs(x1 - x0) > Math.abs(y1 - y0)) {//zuoyou
+				if (left0 == 0 && x1 - x0 > 0)left=0;//直接右滑
+				console.log(left)
+
+				console.log(-this.data.rightWid)
+				if (left>=0 && x1 - x0 > 0) left = 0;//先左滑再右滑
+				if (left <= -this.data.rightWid && x1 - x0 < 0) left = -this.data.rightWid;//左滑
                 this.setData({
-                    list: arr,
+					style: 'transform: translate(' + left + 'px, 0);'
                 })
             }
         },
         end(event) {
-            const [x1, y1, x0, y0] = [
-                event.changedTouches[0].clientX, 
-                event.changedTouches[0].clientY,
-                this.data.x0,
-                this.data.y0];
-            let arr = this.data.list;
-            let index, left,style;
-            for (var i in arr) {                
-                if (arr[i].id == event.currentTarget.id) index = i;                               
-            }
+            
+			let left, style, 
+				x1 = event.changedTouches[0].clientX,
+				y1 = event.changedTouches[0].clientY,
+				x0 = this.data.x0,
+				y0 = this.data.y0,
+				left0 = this.data.left0;
+            
             if (Math.abs(x1 - x0) > Math.abs(y1 - y0)) {//左右滑动
 
                 if (x1 - x0 <= -50) { //左滑超过50
-                    left = -100;            
+					left = -this.data.rightWid;            
                 } else if (x1 - x0 >= 50) { //右滑超过50
                     left = 0;       
                 } else {
-                    left = arr[index].left0;                   
+                    left = left0;                   
                 }
-               
-                arr[index].left = left;
-                arr[index].style = 'transform: translate(' + left + 'px, 0);transition:all 0.3s linear 0.01s';
+				left0=left;
                 this.setData({
-                    list: arr,
+                    left0:left0,
+					style: 'transform: translate(' + left + 'px, 0);transition:all 0.3s linear 0.01s'
                 })
             }
 
@@ -109,31 +111,54 @@ Component({
         endCallback:function(){
 
         },
-        callback: function (id,self) {
-            var arr = self.data.list;
-            for (var i in arr) {
-                if (arr[i].id == id) {
-                    var index = i;
-                }
-            }
-            var left = 0;
-            var style = 'transform: translate(' + left + 'px, 0);transition:all 0.3s linear 0.01s'
-            arr[index].left = left;
-            arr[index].style = style;
-            self.setData({
-                list: arr,
-            })
-        },
-        click: function (e) {
-            var id = e.currentTarget.id
-            var myEventDetail = {
-                id: id,
-                fun: this.callback
-            } // detail对象，提供给事件监听函数
-            var myEventOption = {} // 触发事件的选项
-            this.triggerEvent('myevent', myEventDetail, myEventOption)
+       
+        
+		clickTab:function(e){
+			console.log(e)
+			var index=e.currentTarget.dataset.index;
+			this.data.right[index].handle(this)
+		},
+		initLeft:function(){
+			getApp().globalData.slideTask.forEach(value => {
+				console.log(value)
+				if (value != this) {
+					value.setData({
+						style: 'transform: translate(' + 0 + 'px, 0);transition:all 0.3s linear 0.01s',
+						left0: 0
+					})
+				}
 
-
-        }
-    }
+			})
+			
+		}
+    },
+	lifetimes: {
+		// 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+		created(){
+			console.log("create")
+			
+		},
+		attached() {
+			console.log(
+)
+			getApp().globalData.slideTask = getApp().globalData.slideTask||[]
+			getApp().globalData.slideTask.push(this)
+			console.log(getApp().globalData.slideTask)
+			console.log(this.properties.right)
+			var rightWid=0;
+			this.properties.right.forEach(value=>{
+				console.log(value.width)
+				rightWid+=value.width
+			})
+			this.setData({
+				rightWid: rightWid
+			})
+		 },
+		 ready(){
+			 console.log("ready")
+			//  console.log(this.properties.right)
+		 },
+		moved() { },
+		detached() { },
+	},
 })

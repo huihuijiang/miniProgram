@@ -1,44 +1,42 @@
 .list{
     width:100%;
-    height:70px;
+	display:block;
+    /* height:70px; */
     position:relative;
     border-bottom:1rpx solid #f0f0f0;
 }
 .list .left{
     width:100%;
-    height:70px;
+    
     background:#fff;
-    padding:0 30rpx;
-    line-height:70px;
-    position: absolute;
-    left:0;
+    
+    /* position: absolute; */
+    /* left:0;
     top:0;
     z-index:1;
-    box-sizing: border-box;
-    padding:10px 20px;
+    box-sizing: border-box; */
+   
 }
-.left image{
-    width:50px;
-    height:50px;
-    float:left;
 
-}
-.left view{
-    
-    float:left;
-    height:50px;
-    line-height:50px;
-    font-size:16px;
-	margin-left:10px;
-}  
 .list .right{
-    width:100px;
-    height:70px;
-    background:red;
+   overflow: hidden;
     position: absolute;
-    right:0;
+    left:100%;
+	height:100%;
     top:0;
     color:#fff;
     line-height:70px;
     text-align:center;
+	z-index:9;
+}
+.list .right view{
+	display:flex;
+    height:100%;
+    float:left;
+	justify-content:center;
+	align-items: center;
+	font-size:24rpx;
+}
+.list .right view text{
+    /* display:block; */
 }

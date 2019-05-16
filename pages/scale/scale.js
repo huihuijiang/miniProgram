@@ -14,6 +14,7 @@ Page({
     },
 
     start:function(e){
+		console.log(e.touches)
         var arr = [e.touches[0].pageX, e.touches[0].pageY];
         p0=[e.currentTarget.offsetLeft,e.currentTarget.offsetTop];
         s.push(arr);

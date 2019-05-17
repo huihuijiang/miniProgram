@@ -7,15 +7,7 @@
 }
 .list .left{
     width:100%;
-    
     background:#fff;
-    
-    /* position: absolute; */
-    /* left:0;
-    top:0;
-    z-index:1;
-    box-sizing: border-box; */
-   
 }
 
 .list .right{
@@ -36,7 +28,4 @@
 	justify-content:center;
 	align-items: center;
 	font-size:24rpx;
-}
-.list .right view text{
-    /* display:block; */
 }

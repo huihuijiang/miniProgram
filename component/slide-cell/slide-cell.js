@@ -13,11 +13,8 @@ Component({
         right: {
             type: Array,
 			observer(newVal, oldVal, changedPath) {
-				// console.log(newVal)
 			}
         },
-       
-
     },
 
     /**
@@ -29,20 +26,7 @@ Component({
 		left0:0,
 
     },
-	relations: {
-		'./custom-li': {
-			type: 'child', // 关联的目标节点应为子节点
-			linked(target) {
-				// 每次有custom-li被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
-			},
-			linkChanged(target) {
-				// 每次有custom-li被移动后执行，target是该节点实例对象，触发在该节点moved生命周期之后
-			},
-			unlinked(target) {
-				// 每次有custom-li被移除时执行，target是该节点实例对象，触发在该节点detached生命周期之后
-			}
-		}
-	},
+	
     /**
      * 组件的方法列表
      */
@@ -72,9 +56,6 @@ Component({
 				left0 = this.data.left0;
             if (Math.abs(x1 - x0) > Math.abs(y1 - y0)) {//zuoyou
 				if (left0 == 0 && x1 - x0 > 0)left=0;//直接右滑
-				console.log(left)
-
-				console.log(-this.data.rightWid)
 				if (left>=0 && x1 - x0 > 0) left = 0;//先左滑再右滑
 				if (left <= -this.data.rightWid && x1 - x0 < 0) left = -this.data.rightWid;//左滑
                 this.setData({
@@ -108,11 +89,6 @@ Component({
             }
 
         },
-        endCallback:function(){
-
-        },
-       
-        
 		clickTab:function(e){
 			console.log(e)
 			var index=e.currentTarget.dataset.index;
@@ -120,7 +96,6 @@ Component({
 		},
 		initLeft:function(){
 			getApp().globalData.slideTask.forEach(value => {
-				console.log(value)
 				if (value != this) {
 					value.setData({
 						style: 'transform: translate(' + 0 + 'px, 0);transition:all 0.3s linear 0.01s',
@@ -133,18 +108,10 @@ Component({
 		}
     },
 	lifetimes: {
-		// 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-		created(){
-			console.log("create")
-			
-		},
+		
 		attached() {
-			console.log(
-)
 			getApp().globalData.slideTask = getApp().globalData.slideTask||[]
 			getApp().globalData.slideTask.push(this)
-			console.log(getApp().globalData.slideTask)
-			console.log(this.properties.right)
 			var rightWid=0;
 			this.properties.right.forEach(value=>{
 				console.log(value.width)
@@ -154,11 +121,5 @@ Component({
 				rightWid: rightWid
 			})
 		 },
-		 ready(){
-			 console.log("ready")
-			//  console.log(this.properties.right)
-		 },
-		moved() { },
-		detached() { },
 	},
 })

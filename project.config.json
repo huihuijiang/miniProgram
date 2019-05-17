@@ -14,6 +14,8 @@
 	"libVersion": "2.6.0",
 	"appid": "wx9f05ac1b2f2eb2f7",
 	"projectname": "hui",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

@@ -4,5 +4,6 @@
         "slide-cell": "../../component/slide-cell/slide-cell",
         "currency-cell": "../../component/currency-cell/currency-cell"
     },
-	"disableScroll": true
+	"disableScroll": true,
+  "enablePullDownRefresh": true
 }

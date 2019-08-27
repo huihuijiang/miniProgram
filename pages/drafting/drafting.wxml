@@ -2,6 +2,9 @@
 <view class="container">
 <drafting 
     class="drafting" 
-    vertical="true"
-></drafting>
+    
+>
+<image src="../../image/head.jpg"></image>
+
+</drafting>
 </view>

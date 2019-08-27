@@ -1,5 +1,5 @@
 <!--component/drafting-block/draft-block.wxml-->
-<view id="box" class="drafting-box" style="left:{{left}}px;top:{{top}}px;{{style}}width:{{width}}px;" catchtouchstart='start' catchtouchmove='move' catchtouchend='end'>
+<view id="box" class="drafting-box" style="left:{{left}}px;top:{{top}}px;{{style}}" catchtouchstart='start' catchtouchmove='move' catchtouchend='end'>
 <slot></slot>
     
 </view>

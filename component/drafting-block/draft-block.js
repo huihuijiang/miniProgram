@@ -19,16 +19,24 @@ Component({
   properties: {
     left: String,
     top: String,
+    bottom: String,
+    right: String,
   },
   data: {
   },
   ready: function() {
-    const query = wx.createSelectorQuery().in(this)
+    const query = wx.createSelectorQuery().in(this),_this=this;
     query.select('#box').boundingClientRect()
     query.selectViewport().scrollOffset()
     query.exec(function(res) {
       boxW = res[0].width;
       boxH = res[0].height;
+      var left = _this.data.left !== "" || _this.data.right !== "" ? w - boxW - parseInt(_this.data.right) : 0
+      var top = _this.data.top !== "" || _this.data.bottom !== "" ? w - boxH - _this.data.bottom : 0
+      _this.setData({
+        left: left,
+        top: top
+      })
     })
   },
   methods: {

@@ -63,9 +63,10 @@ Component({
       // 动画
       var _this = this;
       setTimeout(function() {
+        
         _this.setData({
           // 判断靠左还是靠右
-          left: _this.data.left + (boxW / 2) > w / 2 ? w - boxW : 0,
+          left: parseInt(_this.data.left) + (boxW / 2) > w / 2 ? w - boxW : 0,
           style: 'transform: translate(' + 0 + 'px, 0);transition:all 0.2s linear 0.01s;'
         })
       }, 50)

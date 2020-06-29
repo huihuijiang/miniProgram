@@ -1,5 +1,5 @@
 //logs.js
-
+console.log('组件初始化',new Date().getTime())
 Component({
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -116,7 +116,7 @@ Component({
 
     },
     attached() {
-      console.log('attached')
+      console.log('attached',new Date().getTime())
       getApp().globalData.slideTask = getApp().globalData.slideTask || []
       getApp().globalData.slideTask.push(this)
       var rightWid = 0;

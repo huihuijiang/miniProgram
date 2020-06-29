@@ -1,0 +1,5 @@
+
+<view id="canvas-wrap">
+  <image src="/image/head.jpg" class="can"></image>
+  <view class="can" style="position:absolute;top:0;">我😯</view>
+</view>

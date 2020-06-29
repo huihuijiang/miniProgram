@@ -1,69 +1,42 @@
 //app.js
+require("/utils/myPage.js");
+require("/utils/watch.js");
+// 获取应用实例
+console.log(Page)
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+  onLaunch: function() {
+    
+    var _this = this;
+    var menuButton = wx.getMenuButtonBoundingClientRect();
+    console.log(menuButton)
+    this.globalData.menuButton = menuButton
+    wx.getSystemInfo({
+      success: function(res) {
+        _this.globalData.phonex = res.model.indexOf("iPhone X") == -1 ? false : true;
+        // that.globalData.platform = res.platform;
+        var menuButton = wx.getMenuButtonBoundingClientRect();
+        console.log(menuButton)
+        //导航栏高度
+        _this.globalData.totalTopHeight =
+          menuButton.height == menuButton.bottom ?
+          menuButton.height :
+          res.model.indexOf("iPhone") == 0 || (res.platform == 'android' && res.version == '7.0.3') ?
+          menuButton.top + menuButton.height + (menuButton.top - res.statusBarHeight) :
+          menuButton.top + menuButton.height + menuButton.top + res.statusBarHeight
+        console.log('导航栏' + _this.globalData.totalTopHeight)
+        //状态栏高度
+        _this.globalData.statusBarHeight = res.statusBarHeight;
+        console.log('状态栏' + res.statusBarHeight)
+        //标题栏高度
+        _this.globalData.titleBarHeight = _this.globalData.totalTopHeight - res.statusBarHeight;
       }
     })
   },
   globalData: {
     userInfo: null,
-	value:'',
-	msg:'',
+    value: '',
+    msg: '',
   },
-	/**
-	  * 设置监听器
-	  */
-	setWatcher(data, watch, that) { // 接收index.js传过来的data对象和watch对象和页面对象
-		Object.keys(watch).forEach(key => { // 将watch对象内的key遍历
-			console.log(key)
-			this.observe(data, key, watch[key], that); // 监听data内的v属性，传入watch内对应函数以调用
-		})
-	},
 
-    /**
-     * 监听属性 并执行监听函数
-     */
-	observe(obj, key, watchFun, that) {
-		var val = obj[key]; // 给该属性设默认值
-		Object.defineProperty(obj, key, {
-			configurable: true,
-			enumerable: true,
-			set: function (value) {
-				val = value;
-				console.log(val)
-				watchFun(val, that); // 赋值(set)时，调用对应函数
-			},
-			get: function () {
-				return val;
-			}
-		})
-	}
 })

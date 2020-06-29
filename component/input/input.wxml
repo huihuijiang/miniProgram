@@ -1,0 +1,2 @@
+<!--component/input/input.wxml-->
+<input value="{{value}}" bindinput="input" ></input>

@@ -1,7 +1,0 @@
-<!--pages/scale/scale.wxml-->
-<image src="../../image/head.jpg" 
-style="width:{{imgW}}px;height:{{imgH}}px;left:{{left}}px;top:{{top}}px;"
-mode="aspectFit"
-bindtouchstart='start' 
-bindtouchmove='move' 
-bindtouchend='end'></image>

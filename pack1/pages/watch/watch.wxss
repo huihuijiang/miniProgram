@@ -1,0 +1,16 @@
+/* pages/watch/watch.wxss */
+page{
+  padding:32rpx;
+}
+view{
+  margin-bottom:20rpx;
+}
+button{
+	margin:20px;
+}
+input{
+  display:inline-block;
+  width:200rpx;
+  height:20px;
+  border:1rpx solid #666;
+}

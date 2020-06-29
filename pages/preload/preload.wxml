@@ -1,0 +1,14 @@
+<!--pages/preload/preload.wxml-->
+<scroll-view class="list-box" bindscrolltolower="onReachBottom" scroll-y>
+  
+  <view class="box">
+    <view class="page">
+      <view style="color:#FF997C;margin-bottom:20rpx;">onLoad时请求数据</view>
+      <view wx:for="{{navdata2}}" wx:key="{{index}}">姓名：{{item.name}} 年龄：{{item.age}}</view>
+    </view>
+    <view class="page">
+      <view style="color:#FF997C;margin-bottom:20rpx;">onNavigator预加载</view>
+      <view wx:for="{{navdata}}" wx:key="{{index}}">姓名：{{item.name}} 年龄：{{item.age}}</view>
+    </view>
+  </view>
+</scroll-view>

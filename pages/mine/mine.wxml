@@ -1,0 +1,3 @@
+<!--pages/mine/mine.wxml-->
+
+<button open-type="getUserInfo" bindgetuserinfo="onGetUser">注册登陆</button>

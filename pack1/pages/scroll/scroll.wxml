@@ -1,0 +1,5 @@
+<!--pages/scroll/scroll.wxml-->
+<scroll-view class="scroll-view" scroll-y>
+<image src="/image/head.jpg" class="img"></image>
+  <view wx:for="12345678912345678" >{{index}}</view>
+</scroll-view>

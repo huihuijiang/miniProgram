@@ -1,0 +1,6 @@
+<!--pages/gradient/gradient.wxml-->
+<view class="box">
+<view></view>
+<view></view>
+<view></view>
+</view>

@@ -1,18 +1,65 @@
 {
-	"pages": [
-		"pages/index/index",
-		"pages/slideCell/slideCell",
-		"pages/drafting/drafting",
-		"pages/scale/scale",
-		"pages/drop/dropCoin",
-		"pages/rangeSlider/slider",
-		"pages/watch/watch"
-	],
-	"window": {
-		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#000",
-		"navigationBarTitleText": "WeChat",
-		"navigationBarTextStyle": "white"
-	},
-	"sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/preload/preload",
+    "pages/join/join",
+    "pages/github/index"
+  ],
+  "subpackages": [
+    {
+      "root": "pack1",
+      "name": "pack1",
+      "pages": [
+        "pages/slideCell/slideCell",
+        "pages/drafting/drafting",
+        "pages/scale/scale",
+        "pages/drop/dropCoin",
+        "pages/rangeSlider/slider",
+        "pages/watch/watch",
+        "pages/gradient/gradient",
+        "pages/setdata/setdata",
+        "pages/input/index",
+        "pages/scroll/scroll",
+        "pages/test/test",
+        "pages/canvas/index",
+        "pages/websocket/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pack1"
+      ]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#898F95",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/join/join",
+        "text": "加入"
+      }
+    ]
+  }
 }

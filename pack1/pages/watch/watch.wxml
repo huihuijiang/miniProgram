@@ -1,0 +1,8 @@
+<!--pages/watch/watch.wxml-->
+<view><label>firstName：赵</label></view>
+<view>
+<label>lastName：</label><input bindinput="input"></input>
+</view>
+
+<view>姓名：{{name}}</view>
+<view>年龄：{{ageDesc}}</view>

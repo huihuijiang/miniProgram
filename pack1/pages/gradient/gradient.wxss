@@ -1,0 +1,23 @@
+/* pages/gradient/gradient.wxss */
+page{
+  width:100%;
+  overflow: auto;
+}
+.box{
+  width:2250rpx;
+  height:500rpx;
+  display:flex;
+  /* background: linear-gradient(to right, #434752 0%, #390B0B 90%); */
+}
+.box view{
+  flex:1;
+}
+.box view:nth-child(1){
+  background: #434752 ;
+}
+.box view:nth-child(2){
+  background: linear-gradient(to right, #434752 , #390B0B);
+}
+.box view:nth-child(3){
+  background:  #390B0B ;
+}

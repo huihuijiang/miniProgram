@@ -1,0 +1,26 @@
+/* pages/scroll/scroll.wxss */
+page{
+  width:100%;
+  height:100%;
+  background:yellow;
+}
+.scroll-view{
+  width:100%;
+  height:100%;
+  background:pink;
+  position:relative;
+}
+view{
+  height:50px;
+  background:#fff;
+}
+.img{
+  width:50rpx;
+  height:50rpx;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  margin:auto;
+  /* z-index:-1; */
+}

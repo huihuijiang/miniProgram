@@ -1,9 +1,22 @@
 <!--index.wxml-->
-<view class="container">
-  <navigator url="../slideCell/slideCell" hover-class="navigator-hover">slideCell(左滑删除)</navigator>
-  <navigator url="../drafting/drafting" hover-class="navigator-hover">drafting(可拖拽悬浮)</navigator>
- <navigator url="../scale/scale" hover-class="navigator-hover">scale(双指缩放)</navigator>
-  <navigator url="../drop/dropCoin" hover-class="navigator-hover">dropCoin(掉落钱币)</navigator>
-  <navigator url="../watch/watch" hover-class="navigator-hover">watcher(监听器)</navigator>
+<bar></bar>
+<view class="title">
+  <image src="/image/ya.jpg" style="width:100px" mode="widthFix"></image>
+  <view>
+    以下为一些自定义的功能和组件，具体属性参数详见GitHub;如果能帮助到大家开发就太开心啦，感兴趣点个star 和 fo吧,
+    <!-- <navigator url="/pages/github/index">点这里(´థ౪థ）σ</navigator> -->
+  </view>
+  <image src="/image/xiexie.jpg" style="width:100px" mode="widthFix"></image>
 </view>
+<view class="container">
+  <navigator url="/pack1/pages/slideCell/slideCell" hover-class="navigator-hover">slideCell(左滑删除)</navigator>
+  <navigator url="/pack1/pages/drafting/drafting" hover-class="navigator-hover">drafting(可拖拽悬浮)</navigator>
+  <view bindtap="goto">preload(预加载）</view>
+  <navigator url="/pack1/pages/scale/scale" hover-class="navigator-hover">scale(双指缩放)</navigator>
+  <!-- <navigator url="/pack1/pages/drop/dropCoin" hover-class="navigator-hover">dropCoin(掉落钱币)</navigator> -->
+  <navigator url="/pack1/pages/watch/watch" hover-class="navigator-hover">watcher(监听器)</navigator>
+  <!-- <navigator url="../setdata/setdata" hover-class="navigator-hover">setdata对比</navigator> -->
+  <!-- <view bindtap="choose">上传图片</view> -->
+  <!-- <navigator url="../input/index" hover-class="navigator-hover">input双向绑定</navigator> -->
 
+</view>

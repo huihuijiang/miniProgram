@@ -1,0 +1,11 @@
+<!--pages/slideCell/slideCell.wxml-->
+<view class="container">
+  <view class="userinfo">
+   <slide-cell right="{{right}}" bind:refresh="refresh" wx:for="{{list}}" class="my-slide" data-id="{{item.id}}" wx:key="{{index}}" >
+		<view class="my-list" slot="left">
+		<image src="/image/head.jpg" bind></image>
+        <view>{{item.text}}</view>
+		</view>
+   </slide-cell>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+/* pages/preload/preload.wxss */
+page,.list-box{
+padding:32rpx;
+  height:100%;
+
+}
+.box{
+display:flex;
+}
+.page{
+  flex:1;
+}

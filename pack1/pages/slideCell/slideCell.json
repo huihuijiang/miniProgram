@@ -1,0 +1,11 @@
+{
+	
+    "usingComponents": {
+        "slide-cell": "../../component/slide-cell/slide-cell",
+        "currency-cell": "../../component/currency-cell/currency-cell",
+        "bar": "/component/navigation-bar/bar"
+    },
+	"disableScroll": true,
+  "enablePullDownRefresh": true
+  
+}

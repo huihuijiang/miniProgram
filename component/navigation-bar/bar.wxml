@@ -1,0 +1,21 @@
+<view class='nav-wrap' style='height: {{totalTopHeight}}px;color:{{navbarData.titleColor}};background:{{navbarData.backColor}}'>
+  <view class='nav-title-box' style='height:{{contentHeight}}px;top:{{contentTop}}px;'>
+    <view class="nav-left {{navbarData.button.length>1?'button-border':''}}">
+      <view class="nav-button" wx:if="{{defaultBack && ableBack}}" bindtap="goBack">
+        <image src="/image/bai.png"></image>
+      </view>
+      <b wx:if="{{navbarData.button.length && defaultBack && ableBack}}"> </b>
+      <block wx:for="{{navbarData.button}}">
+
+        <view class="nav-button">
+        </view>
+        <b wx:if="{{index<navbarData.button.length-1}}"> </b>
+      </block>
+    </view>
+    <view wx:if='{{navbarData.showTitle}}' class="nav-center">{{navbarData.title}}</view>
+    <view wx:else class="nav-center">
+      <slot></slot>
+    </view>
+    <view class="nav-right" style="width:87px"></view>
+  </view>
+</view>

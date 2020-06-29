@@ -1,0 +1,11 @@
+<!--pages/setdata/setdata.wxml-->
+<view wx:for="{{data}}">
+<text>{{item.name}}</text>
+<text>{{item.code}}</text>
+<text>{{item.brand}}</text>
+<text>{{item.name}}</text>
+<text>{{item.name}}</text>
+<text>{{item.name}}</text>
+<text>{{item.name}}</text>
+</view>
+<button bindtap="change">修改数据</button>

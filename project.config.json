@@ -21,7 +21,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.1",
+	"libVersion": "2.10.4",
 	"appid": "wx9f05ac1b2f2eb2f7",
 	"projectname": "hui",
 	"simulatorType": "wechat",
@@ -43,51 +43,18 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 6,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
-					"name": "logs",
-					"pathName": "pages/logs/logs",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "左滑删除",
-					"pathName": "pages/slideCell/slideCell",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "拖拽",
-					"pathName": "pages/drafting/drafting",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "缩放",
-					"pathName": "pages/scale/scale",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "缩放",
-					"pathName": "pages/scale/scale",
+					"name": "watch",
+					"pathName": "pack1/pages/watch/watch",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "coin",
-					"pathName": "pages/drop/dropCoin",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "滑块",
-					"pathName": "pages/rangeSlider/slider",
 					"scene": null
 				}
 			]

@@ -1,0 +1,6 @@
+/* component/input/input.wxss */
+input{
+  width:100%;
+  height:100rpx;
+  border:1rpx solid #000;
+}

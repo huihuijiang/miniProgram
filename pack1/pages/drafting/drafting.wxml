@@ -1,0 +1,6 @@
+<!--pages/drafting/drafting.wxml-->
+<view class="container">
+<drafting  class="drafting" left="100" top="200">
+<image src="/image/head.jpg"></image>
+</drafting>
+</view>

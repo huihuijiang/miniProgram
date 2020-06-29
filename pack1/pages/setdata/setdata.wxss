@@ -1,0 +1,4 @@
+/* pages/setdata/setdata.wxss */
+page{
+  overflow: auto;
+}
